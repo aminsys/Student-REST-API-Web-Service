@@ -1,5 +1,5 @@
 # Student-REST-API-Web-Service
-A REST API web service to mange students repository in MongoDB container.
+A REST API web service to mange students repository in MongoDB container and OAuth2.
 
 ## Notes
 * Every time the application is started and it connects to an already running MongoDB container, it will insert same documents specified in class `StudentConfig.java` with new IDs. To avoid this, the following database operation can be run to drop all documents before starting the application again:
@@ -54,11 +54,13 @@ db[NAME OF COLLECTION].find()
 
 A sample of how a document looks like is as following:
 ``` JSON
+[  
   {
     _id: ObjectId("64a5534e3a8b06354b206082"),
     name: 'Jane Doe',
     grade: 91,
     _class: 'com.student.studentregistration.Student'
   }
+]
 ```
 
