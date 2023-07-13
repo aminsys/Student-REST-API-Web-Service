@@ -2,8 +2,6 @@ package com.student.studentregistration;
 
 import java.time.LocalDateTime;
 
-import org.bson.types.ObjectId;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,7 +13,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class RegistrationReply {
 
-    ObjectId id;
+    Long id;
     String name;
     int grade;
     LocalDateTime regDateTime;
