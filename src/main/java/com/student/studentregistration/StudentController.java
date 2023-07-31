@@ -8,7 +8,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.student.exception.StudentNotFoundException;
+import com.student.exception.*;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 @RestController
 public class StudentController {
@@ -26,5 +29,10 @@ public class StudentController {
     @ResponseBody
     public Student getStudentById(@PathVariable Long id) throws StudentNotFoundException {
         return studentService.getStudentById(id);
-    }    
+    }
+    
+    @PutMapping("student/update/{id}")
+    public void updateStudent(@PathVariable String id, @RequestBody Student student) throws NoStudentUpdatePossible {
+        studentService.updateStudent(student);
+    }
 }
